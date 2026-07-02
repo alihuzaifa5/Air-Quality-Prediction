@@ -1,0 +1,152 @@
+[
+  {
+    "topic": "pm25",
+    "keywords": ["pm2.5", "pm 2.5", "fine particles", "particulate matter 2.5"],
+    "answer": "PM2.5 refers to fine particulate matter smaller than 2.5 micrometers in diameter. These particles are extremely dangerous because they penetrate deep into the lungs and can enter the bloodstream. Major sources include vehicle exhaust, industrial emissions, and burning of fossil fuels. In Pakistan, PM2.5 is the leading cause of poor air quality, especially in Lahore and Multan."
+  },
+  {
+    "topic": "pm10",
+    "keywords": ["pm10", "pm 10", "coarse particles", "particulate matter 10"],
+    "answer": "PM10 refers to particles smaller than 10 micrometers. They are larger than PM2.5 and are usually filtered by the nose and throat, but prolonged exposure still causes respiratory problems. Common sources include dust, construction sites, and road traffic."
+  },
+  {
+    "topic": "no2",
+    "keywords": ["no2", "nitrogen dioxide", "nitrogen oxide"],
+    "answer": "NO2 (Nitrogen Dioxide) is a reddish-brown gas produced mainly by vehicle engines and power plants. It irritates the respiratory system, worsens asthma, and contributes to smog formation. High NO2 levels are common in heavily trafficked cities like Karachi and Lahore."
+  },
+  {
+    "topic": "so2",
+    "keywords": ["so2", "sulfur dioxide", "sulphur dioxide"],
+    "answer": "SO2 (Sulfur Dioxide) is released when fossil fuels containing sulfur are burned. It causes irritation of the eyes and respiratory tract and contributes to acid rain. Industrial areas and power plants are the main sources in Pakistan."
+  },
+  {
+    "topic": "co",
+    "keywords": ["co", "carbon monoxide", "colorless gas"],
+    "answer": "CO (Carbon Monoxide) is a colorless, odorless gas produced by incomplete combustion in vehicles and generators. It is dangerous because it reduces the blood's ability to carry oxygen. Even at low levels, it causes headaches and dizziness. At high levels, it is fatal."
+  },
+  {
+    "topic": "proximity_industrial",
+    "keywords": ["proximity to industrial areas", "industrial proximity", "industrial distance", "factories nearby"],
+    "answer": "Proximity to Industrial Areas measures how close a location is to factories and industrial zones, usually in kilometers. Locations closer to industrial areas tend to have higher pollution levels due to emissions from manufacturing, power plants, and factory exhaust."
+  },
+  {
+    "topic": "population_density",
+    "keywords": ["population density", "population", "crowded area", "city population"],
+    "answer": "Population Density measures the number of people per square kilometer in an area. Higher population density usually correlates with higher pollution due to increased vehicle traffic, energy consumption, and waste generation."
+  },
+  {
+    "topic": "aqi",
+    "keywords": ["aqi", "air quality index", "air quality number", "what is aqi"],
+    "answer": "AQI stands for Air Quality Index. It is a scale used to communicate how polluted the air is. This project classifies air quality into four categories: Good, Moderate, Poor, and Hazardous, based on pollutant levels and environmental factors."
+  },
+  {
+    "topic": "random_forest",
+    "keywords": ["random forest", "how model works", "how does random forest work", "why random forest"],
+    "answer": "Random Forest is an ensemble learning method that builds multiple decision trees during training and combines their results through voting. Each tree is trained on a random subset of data and features. The final prediction is the class that receives the most votes. In this project, Random Forest was selected because it handles non-linear relationships well, is resistant to overfitting, and performs well on tabular pollution data."
+  },
+  {
+    "topic": "decision_tree",
+    "keywords": ["decision tree", "how decision tree works", "what is decision tree"],
+    "answer": "A Decision Tree splits data based on feature thresholds to make predictions. It creates a tree-like structure where each internal node represents a decision based on a feature value. It is simple to understand but prone to overfitting on complex datasets. In this project, it was compared against Random Forest and performed slightly lower in accuracy."
+  },
+  {
+    "topic": "logistic_regression",
+    "keywords": ["logistic regression", "logistic model", "what is logistic regression"],
+    "answer": "Logistic Regression is a linear classification model that estimates the probability of a class. Despite its name, it is used for classification, not regression. It works well when the relationship between features and the target is roughly linear. In this project, it was one of the four models compared, though it performed lower than Random Forest on this non-linear air quality dataset."
+  },
+  {
+    "topic": "knn",
+    "keywords": ["knn", "k nearest neighbors", "k-nearest neighbors", "nearest neighbor"],
+    "answer": "KNN (K-Nearest Neighbors) classifies a data point based on the majority class among its K closest neighbors in the feature space. It is simple but can be slow on large datasets. In this project, KNN was compared against Random Forest, Decision Tree, and Logistic Regression."
+  },
+  {
+    "topic": "accuracy",
+    "keywords": ["accuracy", "model accuracy", "how accurate", "what is accuracy"],
+    "answer": "Accuracy is the percentage of correct predictions out of total predictions. Formula: Accuracy = (Correct Predictions / Total Predictions) x 100. In this project, all four models were evaluated on accuracy along with Precision, Recall, and F1 Score to get a complete picture of model performance."
+  },
+  {
+    "topic": "confusion_matrix",
+    "keywords": ["confusion matrix", "what is confusion matrix", "confusion"],
+    "answer": "A Confusion Matrix is a table showing correct and incorrect predictions for each class. Rows represent actual classes and columns represent predicted classes. The diagonal shows correct predictions. Off-diagonal values show misclassifications. It helps identify which AQI categories the model confuses most often."
+  },
+  {
+    "topic": "f1_score",
+    "keywords": ["f1", "f1 score", "f1-score", "what is f1"],
+    "answer": "F1 Score is the harmonic mean of Precision and Recall. It is useful when classes are imbalanced. Formula: F1 = 2 x (Precision x Recall) / (Precision + Recall). This project's dataset has imbalanced classes (more Good than Hazardous records), so F1 Score is especially important here."
+  },
+  {
+    "topic": "cross_validation",
+    "keywords": ["cross validation", "5-fold", "k-fold", "cross val"],
+    "answer": "Cross-validation splits the dataset into K equal parts. The model trains on K-1 parts and tests on the remaining part. This repeats K times. The average score across all folds gives a more reliable estimate of model performance than a single train-test split. This project uses 5-fold cross-validation."
+  },
+  {
+    "topic": "feature_importance",
+    "keywords": ["feature importance", "important features", "which pollutant", "why prediction", "main reason"],
+    "answer": "Feature importance in Random Forest measures how much each feature contributes to the predictions. It is calculated based on how much each feature reduces impurity across all trees. In this project, the feature importance chart shows which pollutants and environmental factors had the most influence on the AQI prediction."
+  },
+  {
+    "topic": "dataset",
+    "keywords": ["dataset", "data", "kaggle", "training data", "where data"],
+    "answer": "This project uses an air quality and pollution assessment dataset containing PM2.5, PM10, NO2, SO2, CO, Temperature, Humidity, Proximity to Industrial Areas, and Population Density, along with a labeled Air Quality category. The dataset was preprocessed by removing null values, encoding categorical labels, and scaling features using StandardScaler before training."
+  },
+  {
+    "topic": "lahore",
+    "keywords": ["lahore", "lahore pollution", "lahore air quality", "lahore aqi"],
+    "answer": "Lahore is consistently ranked among the most polluted cities in the world. Its average PM2.5 is around 98 μg/m³, far above the WHO safe limit of 15 μg/m³. Causes include vehicle emissions, brick kilns, crop burning in surrounding areas, and dense urban traffic. Winter months are especially severe due to temperature inversions trapping pollutants."
+  },
+  {
+    "topic": "karachi",
+    "keywords": ["karachi", "karachi pollution", "karachi air quality"],
+    "answer": "Karachi has moderate air quality compared to Lahore. Its coastal location and sea breezes help disperse pollutants. Average PM2.5 is around 65 μg/m³. Main sources include industrial emissions, vehicle traffic, and port activity. Air quality worsens during dry seasons when dust levels rise."
+  },
+  {
+    "topic": "islamabad",
+    "keywords": ["islamabad", "islamabad pollution", "islamabad air quality"],
+    "answer": "Islamabad has the best air quality among major Pakistani cities with an average PM2.5 of around 42 μg/m³. Its green zones, lower vehicle density, and geographic location contribute to better air. However, smoke from neighboring areas sometimes affects air quality in winter."
+  },
+  {
+    "topic": "peshawar",
+    "keywords": ["peshawar", "peshawar pollution", "peshawar air quality"],
+    "answer": "Peshawar has moderate to poor air quality with average PM2.5 around 72 μg/m³. The city is surrounded by mountains which can trap pollutants, and vehicle emissions and heating fuels are major contributors. Air quality is worse in winter months."
+  },
+  {
+    "topic": "health_good",
+    "keywords": ["good air", "safe air", "what to do good", "good aqi health"],
+    "answer": "When air quality is Good, it is safe for everyone including children, elderly, and people with respiratory conditions. No precautions are necessary. You can exercise outdoors and keep windows open freely."
+  },
+  {
+    "topic": "health_hazardous",
+    "keywords": ["hazardous", "dangerous air", "what to do hazardous", "hazardous health", "emergency"],
+    "answer": "When air quality is Hazardous, everyone is at serious health risk. Stay indoors and keep windows and doors closed. Use air purifiers if available. Wear an N95 mask if you must go outside. Children, elderly, and people with asthma or heart conditions must not go outside under any circumstances. Seek medical attention if you experience chest pain or difficulty breathing."
+  },
+  {
+    "topic": "health_moderate",
+    "keywords": ["moderate air", "moderate aqi", "what to do moderate"],
+    "answer": "When air quality is Moderate, it is acceptable for most people. Sensitive individuals such as those with asthma or heart disease should limit prolonged outdoor exertion. Keep windows open for ventilation and monitor air quality updates."
+  },
+  {
+    "topic": "health_poor",
+    "keywords": ["poor air", "poor aqi", "what to do poor", "unhealthy air"],
+    "answer": "When air quality is Poor, everyone may begin to experience health effects. Reduce prolonged outdoor activities. Wear a mask when going outside. Keep windows closed. Sensitive groups should stay indoors and avoid physical exertion."
+  },
+  {
+    "topic": "smog",
+    "keywords": ["smog", "what is smog", "smog causes", "why smog"],
+    "answer": "Smog is a type of intense air pollution formed when vehicle emissions and industrial pollutants react with sunlight. The word comes from smoke and fog. In Pakistan, winter smog is severe in Punjab due to crop burning combined with vehicle and factory emissions. Smog reduces visibility and causes serious respiratory and eye problems."
+  },
+  {
+    "topic": "project_overview",
+    "keywords": ["what is this project", "about project", "project overview", "what does this app do"],
+    "answer": "AirSense Pakistan is an AI-powered Air Quality Decision Support System developed as a 4th semester project. It allows users to enter pollution sensor readings and receive an instant AQI category prediction using a trained Random Forest model. The system also provides health recommendations, historical trend analysis, city comparisons, and this AI assistant — all without any internet connection."
+  },
+  {
+    "topic": "prediction_history",
+    "keywords": ["my history", "past predictions", "previous predictions", "my records"],
+    "answer": "HISTORY_CONTEXT"
+  },
+  {
+    "topic": "trend",
+    "keywords": ["my trend", "air quality trend", "getting worse", "getting better", "trend"],
+    "answer": "HISTORY_CONTEXT"
+  }
+]
